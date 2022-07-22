@@ -1,0 +1,54 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "tasks": {
+        "inputs": [
+            {
+                "command": "shellCommand.execute",
+                "type": "command",
+                "args": {
+                    "command": "${workspaceFolder}/test.py --list_families",
+                    "description": "Select the family ",
+                    "fieldSeparator": "|"
+                },
+                "id": "listFamilies"
+            },
+            {
+                "command": "shellCommand.execute",
+                "type": "command",
+                "args": {
+                    "command": "${workspaceFolder}/test.py --list_family_os --family ${input:listFamilies}",
+                    "description": "Select the os",
+                    "fieldSeparator": "|"
+                },
+                "id": "listOs"
+            },
+                
+        ],
+        "tasks": [
+            {
+                "command": "${workspaceFolder}/test.py --family ${input:listFamilies} --os  ${input:listOs}",
+                "label": "Setup Families",
+                "type": "shell",
+                "presentation": {
+                    "close": false,
+                    "clear": false,
+                    "echo": false,
+                    "focus": true,
+                    "revealProblems": "never",
+                    "reveal": "always",
+                },
+                "problemMatcher": [],
+            },
+        ],
+        "version": "2.0.0"
+    },
+    "settings": {
+
+        
+        
+    }
+}

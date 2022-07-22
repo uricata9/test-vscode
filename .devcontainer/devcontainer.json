@@ -1,0 +1,61 @@
+{
+    "name": "${localWorkspaceFolder}",
+    "build": {
+        "dockerfile": "${localWorkspaceFolder}/.devcontainer/Dockerfile",
+        "args":
+        {
+            "USERNAME": "vscode",
+            "UID_USER": "1000",
+            "GID_GROUP":"1000",
+            "GROUPNAME": "vscode",
+        }
+    },
+    "containerUser": "vscode",
+    "remoteUser": "vscode",
+    "mounts":
+    [
+        "source=/run/docker.sock,target=/run/docker.sock,type=bind",
+        "source=/usr/bin/docker,target=/usr/bin/docker,type=bind",
+        "source=/tmp,target=/tmp,type=bind,consistency=persisted",
+        "source=${localEnv:HOME}/.vscode-server-dune/.vscode-dune,target=/home/dunedev/.vscode-server,type=bind,consistency=cached"
+    ],
+    "runArgs": ["--privileged", "--ipc=host", "--pid=host", "-v", "/media:/media:rshared",
+    "-v", "/work:/work:rshared"],
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=persisted",
+    "containerEnv":
+    {
+
+    },
+    "remoteEnv":
+    {
+
+    },
+    "extensions":
+    [
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "rogalmic.bash-debug",
+        "DotJoshJohnson.xml",
+        "alefragnani.bookmarks",
+        "ms-vscode-remote.remote-ssh",
+        "spadin.remote-x11-ssh",
+        "ms-vscode-remote.remote-containers",
+        "ms-vscode.cpptools-extension-pack",
+        "andreoneti.qml-formatter",
+        "augustocdias.tasks-shell-input",
+        "spadin.memento-inputs",
+        "ethansk.restore-terminals",
+        "alexey-strakh.stackoverflow-search",
+        "njpwerner.autodocstring",
+        "aaron-bond.better-comments",
+        "matepek.vscode-catch2-test-adapter",
+        "eamodio.gitlens",
+        "timonwong.shellcheck",
+        "tyriar.vscode-terminal-here",
+        "cschlosser.doxdocgen",
+        "jebbs.plantuml",
+    ]
+}
+
