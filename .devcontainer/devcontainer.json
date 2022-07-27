@@ -21,6 +21,7 @@
     ],
     "runArgs": ["--privileged", "--ipc=host", "--pid=host", "-v", "/media:/media:rshared",
     "-v", "/work:/work:rshared"],
+    "initializeCommand": "${localWorkspaceFolder}/.devcontainer/initializeCommand.sh",
     "workspaceFolder": "${localWorkspaceFolder}",
     "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=persisted",
     "containerEnv":

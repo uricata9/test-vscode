@@ -12,5 +12,5 @@ ENV GROUPNAME=${GROUPNAME}
 
 
 RUN useradd -d /home/$USERNAME -u "$UID_USER" "$USERNAME"
-RUN mkdir -p /home/$USERNAME
+RUN mkdir -p /home/$USERNAME && chown $USERNAME /home/$USERNAME
 
