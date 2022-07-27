@@ -26,11 +26,19 @@
     "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=persisted",
     "containerEnv":
     {
-
+        "no_proxy": "${localEnv:no_proxy}",
+        "https_proxy": "${localEnv:https_proxy}",
+        "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+        "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+        "http_proxy": "${localEnv:http_proxy}",
     },
     "remoteEnv":
     {
-
+        "no_proxy": "${localEnv:no_proxy}",
+        "https_proxy": "${localEnv:https_proxy}",
+        "HTTPS_PROXY": "${localEnv:HTTPS_PROXY}",
+        "HTTP_PROXY": "${localEnv:HTTP_PROXY}",
+        "http_proxy": "${localEnv:http_proxy}",
     },
     "extensions":
     [
