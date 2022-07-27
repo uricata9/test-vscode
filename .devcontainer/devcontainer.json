@@ -17,7 +17,7 @@
         "source=/run/docker.sock,target=/run/docker.sock,type=bind",
         "source=/usr/bin/docker,target=/usr/bin/docker,type=bind",
         "source=/tmp,target=/tmp,type=bind,consistency=persisted",
-        "source=${localEnv:HOME}/.vscode-server,target=/home/vscode/.vscode-server,type=bind,consistency=cached"
+        "source=${localEnv:HOME}/.vscode-container-server,target=/home/vscode/.vscode-server,type=bind,consistency=cached"
     ],
     "runArgs": ["--privileged", "--ipc=host", "--pid=host", "-v", "/media:/media:rshared",
     "-v", "/work:/work:rshared"],
